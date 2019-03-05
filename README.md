@@ -20,8 +20,8 @@ An Ansible playbook to create a sudo user with SSH key-based authentication on t
 3. Open the `hosts` file and replace `SERVER-IP-ADDRESS` with the public IP address of your server.
     ```
     [server]
-    111.111.111.111
-    222.222.222.222
+    111.111.111.111  ansible_user=USER ansible_port=PORT
+    222.222.222.222  ansible_user=USER ansible_port=PORT
     ```
 4. Copy `config.example.yml` to `config.yml`.
     ```
@@ -30,9 +30,9 @@ An Ansible playbook to create a sudo user with SSH key-based authentication on t
 5. Open the `config.yml` file, make desired changes and save changes.
 6. Test the connection.
     ```
-    ansible all -m ping -u USER -b -e ansible_port=PORT
+    ansible all -m ping
     ```
 6. Run playbook
     ```
-    ansible-playbook provision.yml -u USER -b -e ansible_port=PORT
+    ansible-playbook provision.yml
     ```

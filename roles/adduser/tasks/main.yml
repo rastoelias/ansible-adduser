@@ -13,3 +13,11 @@
     user: '{{ USERNAME }}'
     state: present
     key: "{{ lookup('file', LOCAL_PUBLIC_KEY) }}"
+
+- name: Create /etc/sudoers.d/{{ USERNAME }} for the passwordless access
+  template:
+    src: sudoers.j2
+    dest: '/etc/sudoers.d/{{ USERNAME }}'
+    owner: root
+    group: root
+    mode: 0440
