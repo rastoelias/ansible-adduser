@@ -1,0 +1,15 @@
+---
+
+- name: Add new user ({{ USERNAME }}) with sudo
+  user:
+    name: '{{ USERNAME }}'
+    password: '{{ PASSWORD_HASH }}'
+    groups: sudo
+    state: present
+    shell: /bin/bash
+
+- name: Configure SSH key-based authentication for created ({{ USERNAME }}) user
+  authorized_key:
+    user: '{{ USERNAME }}'
+    state: present
+    key: "{{ lookup('file', LOCAL_PUBLIC_KEY) }}"

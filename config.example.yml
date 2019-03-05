@@ -1,0 +1,10 @@
+---
+
+# Add new user
+# To generate a random strong password you can use https://www.lastpass.com/password-generator
+# Then use Mkpassword for generate password hash `mkpasswd -m sha-512`
+USERNAME: USERNAME
+PASSWORD_HASH: PASSWORD-HASH
+
+# Path to your local public key
+LOCAL_PUBLIC_KEY: '~/.ssh/id_rsa.pub'
