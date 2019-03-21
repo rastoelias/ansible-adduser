@@ -5,8 +5,9 @@ An Ansible playbook to create a sudo user with SSH key-based authentication on t
 * SSH Keys on the local machine.
 * Ansible 2.7+ on your local machine.
 * Mkpassword on your local machine.
-* Remote machine with the [Ubuntu server](http://cdimage.ubuntu.com/releases/18.04.2/release/) installed.
-* Root/sudo access with SSH key-based authentication on the remote machine.
+* Remote machine. Tested on:
+    * Ubuntu 18.04
+* `root` access with SSH key-based authentication on the remote machine.
 
 ## Usage
 1. Clone this repository.
@@ -17,11 +18,10 @@ An Ansible playbook to create a sudo user with SSH key-based authentication on t
     ```
     cp hosts.example hosts
     ```
-3. Open the `hosts` file and replace `SERVER-IP-ADDRESS` with the public IP address of your server.
+3. Open the `hosts` file, make desired changes and save the file.
     ```
     [server]
-    111.111.111.111  ansible_user=USER ansible_port=PORT
-    222.222.222.222  ansible_user=USER ansible_port=PORT
+    111.111.111.111 ansible_user=root ansible_port=22
     ```
 4. Copy `config.example.yml` to `config.yml`.
     ```
