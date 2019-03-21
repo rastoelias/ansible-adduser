@@ -36,3 +36,7 @@ An Ansible playbook to create a sudo user with SSH key-based authentication on t
     ```
     ansible-playbook provision.yml
     ```
+7. Test the connection
+    ```
+    ssh NEW-USERNAME@IP-ADDRESS
+    ```
